@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    <div class="content_div">
+        <div class="login_div">
+            <h2 style="margin-bottom: 16px; width: 100%; text-align: center;">ورود</h2>
+            <div class="form_div">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button class="button" type="submit">ورود</button>
+                </form>
+                <a href="/register/"><button class="button">ثبت نام</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
