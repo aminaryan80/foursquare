@@ -29,3 +29,12 @@ def register(request):
             return redirect('login')
     else:
         return render(request, 'register.html', context={'error': "None"})
+
+
+def index(request):
+    context = {
+        'is_authenticated': request.user.is_authenticated,
+        'username': request.user.username,
+    }
+
+    return render(request, 'index.html', context=context)
